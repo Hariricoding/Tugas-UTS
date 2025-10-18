@@ -1,0 +1,200 @@
+/* ==============================
+   STYLE.CSS - Portal Berita Mahmal (Nuansa Kuning Elegan)
+   ============================== */
+
+/* Reset ringan agar tampilan konsisten */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------
+   1. BODY & GLOBAL STYLE
+---------------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #FFF8E7, #FFE8A1); /* gradasi kuning lembut */
+  color: #4B3B0A; /* cokelat tua untuk teks agar elegan */
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Hilangkan margin default container */
+.container {
+  margin-top: 80px;
+}
+
+/* ----------------------------------
+   2. NAVBAR
+---------------------------------- */
+.navbar {
+  background: linear-gradient(135deg, #FFD700, #FFC107); /* gradasi emas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #fff8e7 !important;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: #fff4c2 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #FFD700 !important;
+  text-decoration: underline;
+}
+
+/* Search bar */
+#search {
+  border-radius: 20px;
+  border: 1px solid #FFD700;
+  padding-left: 12px;
+}
+
+/* Tombol dark mode */
+#toggleMode {
+  border-color: #FFD700;
+  color: #fff8e7;
+  transition: 0.3s;
+}
+
+#toggleMode:hover {
+  background-color: #FFD700;
+  color: #4B3B0A;
+}
+
+/* ----------------------------------
+   3. CARD BERITA
+---------------------------------- */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff8e7;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Tombol "Selengkapnya" */
+.btn-custom {
+  background: linear-gradient(135deg, #FFD700, #FFC107);
+  color: #4B3B0A;
+  border: none;
+  transition: 0.3s;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, #FFEC8B, #FFD54F);
+  color: #4B3B0A;
+  transform: translateY(-2px);
+}
+
+/* ----------------------------------
+   4. FOOTER
+---------------------------------- */
+footer {
+  background: linear-gradient(135deg, #FFC107, #FFD700);
+  color: #4B3B0A;
+  padding: 20px 0;
+  margin-top: 60px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ----------------------------------
+   5. DARK MODE (Sinkron dengan JS)
+---------------------------------- */
+body.bg-dark {
+  background: #2e2b1c !important;
+  color: #fff4c2 !important;
+}
+
+body.bg-dark .navbar {
+  background: linear-gradient(135deg, #4B3B0A, #3A2E0A);
+}
+
+body.bg-dark .card {
+  background-color: #3A2E0A !important;
+  color: #fff4c2;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+}
+
+body.bg-dark footer {
+  background: linear-gradient(135deg, #3A2E0A, #4B3B0A);
+  color: #FFD700;
+}
+
+/* ----------------------------------
+   6. RESPONSIVE
+---------------------------------- */
+@media (max-width: 992px) {
+  #search {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  #toggleMode {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+
+  .card-body h5 {
+    font-size: 1rem;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ----------------------------------
+   7. ANIMASI MASUK (Tambahan opsional)
+---------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.5s ease-in-out;
+}
